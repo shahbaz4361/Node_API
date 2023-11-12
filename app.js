@@ -15,9 +15,7 @@ connectDB()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
-productRouter.get("/" , (req, res)=>{
-    res.send("API is live")
-})
+
 
 app.use('/api/product', productRouter)
 

@@ -2,6 +2,10 @@ import express from 'express';
 import productController from '../Controllers/productController.js';
 const productRouter = express.Router();
 
+productRouter.get("/" , (req, res)=>{
+    res.send("API is live")
+})
+
 // Create new product
 productRouter.post('/createProduct', productController.createProduct);
 
