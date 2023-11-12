@@ -16,8 +16,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-
 app.use('/api/product', productRouter)
+
+app.get("/" , (req, res)=>{
+    return res.send("API is live")
+ })
 
 app.listen(port, ()=>{
     console.log(`server is running on port http://localhost:${port}`)
