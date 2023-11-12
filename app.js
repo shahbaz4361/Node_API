@@ -19,7 +19,7 @@ app.use(express.json());
 app.use('/api/product', productRouter)
 
 app.get("/" , (req, res)=>{
-    return res.send("API is live")
+    return res.send({message:"API is live"})
  })
 
 app.listen(port, ()=>{
