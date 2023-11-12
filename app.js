@@ -5,43 +5,25 @@ import {connectDB} from "./config/database.js";
 import dotenv from "dotenv"
 dotenv.config()
 import productRouter from './routes/productRoutes.js';
-import cors from "cors"
-import errorMiddleware from "./midllewares/error.js";
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
 connectDB()
 
-
-const allowedOrigins = ['https://node-api-irbk.onrender.com', 'http://localhost:3001'];
-
 app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use(cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-  }))
 
 app.use(express.json());
 
 app.get("/" , (req, res)=>{
     return res.send({message:"API is live"})
 })
-app.use(errorMiddleware);
 
 
-app.use('/api/product', productRouter)
+app.use('/api', productRouter)
 
-app.listen(port,"0.0.0.0", (err) => {
-    if (err) {
-      console.error('Error starting the server:', err);
-    } else {
+app.listen(port, (err) => {
+    
       console.log(`Server is listening on port ${port}`);
-    }
+    
   });
