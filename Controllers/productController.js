@@ -32,7 +32,7 @@ async function createProduct(req, res) {
         console.error('Error creating product:', error);
         res.status(500).json({
             success: false,
-            message: 'Internal server error'
+            message: 'gadbad server error'
         });
     }
 };
@@ -40,7 +40,7 @@ async function createProduct(req, res) {
 // Fetch all products
 async function fetchAllProduct(req, res) { 
     try {
-        const products = await Product.find();
+        const products = await Product.get();
 
         res.status(200).json({
             success: true,
@@ -50,7 +50,7 @@ async function fetchAllProduct(req, res) {
         console.error('Error fetching products:', error);
         res.status(500).json({
             success: false,
-            message: 'Internal server error'
+            message: 'masla server error'
         });
     }
 };
@@ -75,7 +75,7 @@ async function updateProduct(req, res) {
         console.error('Error updating product:', error);
         res.status(500).json({
             success: false,
-            message: 'Internal server error'
+            message: 'problem server error'
         });
     }
 };
@@ -101,7 +101,7 @@ async function deleteProduct(req, res) {
         console.error('Error deleting product:', error);
         res.status(500).json({
             success: false,
-            message: 'Internal server error'
+            message: 'sankat server error'
         });
     }
 };
@@ -126,7 +126,7 @@ async function fetchProductById(req, res) {
         console.error('Error fetching product:', error);
         res.status(500).json({
             success: false,
-            message: 'Internal server error'
+            message: 'dikkat server error'
         });
     }
 };
