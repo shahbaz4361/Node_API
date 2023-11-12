@@ -131,16 +131,17 @@ async function fetchProductById(req, res) {
     }
 };
 
-async function searchMoreProduct (req, res) {    
-    const product = await Product.find({})
-    res.status(200).json({product})           
-}
+// async function searchMoreProduct (req, res) {    
+//     const product = await Product.find({})
+//     res.status(200).json({product})           
+// }
 
-async function searchProduct (req, res) {    
-        const product = await Product.find(req.query)
-        res.status(200).json({product})           
-}
+// async function searchProduct (req, res) {    
+//         const product = await Product.find(req.query)
+//         res.status(200).json({product})           
+// }
 
-export default{createProduct, fetchAllProduct,updateProduct,deleteProduct,fetchProductById,searchProduct,
-    searchMoreProduct
+export default{createProduct, fetchAllProduct,updateProduct,deleteProduct,fetchProductById,
+    // searchProduct,
+    // searchMoreProduct
 }
