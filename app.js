@@ -23,8 +23,8 @@ app.get("/" , (req, res)=>{
 
 app.use('/api/product', productRouter)
 
-app.listen(port, (err) => {
+app.listen(port,"0.0.0.0", (err) => {
     
-      console.log(`Server is listening on port ${port}`);
+      console.log(`Server is listening on port http://0.0.0.0:${port}`);
     
   });
