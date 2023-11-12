@@ -18,10 +18,10 @@ productRouter.delete('/deleteProduct/:id', productController.deleteProduct);
 productRouter.get('/findById/:id', productController.fetchProductById);
 
 // Search Product By entering Value Pair (key and Value)
-// productRouter.get('/searchProduct', productController.searchProduct)
+productRouter.get('/searchProduct', productController.searchProduct)
 
 
-// productRouter.get('/searchMoreProduct', productController.searchMoreProduct)
+productRouter.get('/searchMoreProduct', productController.searchMoreProduct)
 
 
 export default productRouter;
