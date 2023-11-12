@@ -40,7 +40,7 @@ async function createProduct(req, res) {
 // Fetch all products
 async function fetchAllProduct(req, res) { 
     try {
-        const products = await Product.get();
+        const products = await Product.find();
 
         res.status(200).json({
             success: true,
