@@ -25,11 +25,10 @@ app.get("/" , (req, res)=>{
     return res.send({message:"API is live"})
 })
 
-
 app.use('/api/product', productRouter)
 
 app.listen(port,"0.0.0.0", (err) => {
     
-      console.log(`Server is listening on port http://0.0.0.0:${port}`);
+      console.log(`Server is listening on port http://localhost:${port}`);
     
   });
