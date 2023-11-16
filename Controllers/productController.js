@@ -8,13 +8,13 @@ async function createProduct(req, res) {
             return res.status(400).json({
                 success: false,
                 message: 'name is required'
-            });
+            });  
         }
 
 
         const product = await Product.create(req.body);
 
-        res.status(201).json({
+        res.status(200).json({
             success: true,
             product
         });
@@ -132,7 +132,7 @@ async function fetchProductById(req, res) {
 };
 
 async function searchMoreProduct (req, res) {    
-    const product = await Product.find({})
+    const product = await Product.findOne({})
     res.status(200).json({product})           
 }
 
