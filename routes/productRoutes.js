@@ -2,6 +2,7 @@ import express from 'express';
 import productController from '../Controllers/productController.js';
 const productRouter = express.Router();
 
+
 // Create new product
 productRouter.post('/createProduct', productController.createProduct);
 
