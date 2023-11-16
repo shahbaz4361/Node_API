@@ -4,11 +4,11 @@ import Product from '../model/product.js'; // import model file
 async function createProduct(req, res) {
     try {
         // for name required
-        if (!req.body.name) {
+        if(!req.body.name) {
             return res.status(400).json({
                 success: false,
-                message: 'name is required'
-            });  
+                message : "Name Is Required"
+            })
         }
 
 
