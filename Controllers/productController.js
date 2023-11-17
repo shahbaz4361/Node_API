@@ -3,14 +3,14 @@ import Product from '../model/product.js'; // import model file
 // Create a new product
 async function createProduct(req, res) {
     try {
+       
         // for name required
-        if(!req.body.name) {
+        if (!req.body.name) {
             return res.status(400).json({
-                success: false,
-                message : "Name Is Required"
+                success: true,
+                Product
             })
         }
-
 
         const product = await Product.create(req.body);
 
@@ -21,7 +21,7 @@ async function createProduct(req, res) {
 
     } catch (error) {
 
-        //for duplicate key
+        // for duplicate key
         if (error.code === 11000) {
             return res.status(400).json({
                 success: false,
@@ -131,17 +131,12 @@ async function fetchProductById(req, res) {
     }
 };
 
-async function searchMoreProduct (req, res) {    
-    const product = await Product.findOne({})
-    res.status(200).json({product})           
-}
+async function searchProduct(req, res) {      
+      const product = await Product.find(req.query);
+      res.status(200).json({ product });    
+  }
 
-async function searchProduct (req, res) {    
-        const product = await Product.find(req.query)
-        res.status(200).json({product})           
-}
 
 export default{createProduct, fetchAllProduct,updateProduct,deleteProduct,fetchProductById,
     searchProduct,
-    searchMoreProduct,
 }

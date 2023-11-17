@@ -21,8 +21,4 @@ productRouter.get('/findById/:id', productController.fetchProductById);
 // Search Product By entering Value Pair (key and Value)
 productRouter.get('/searchProduct', productController.searchProduct)
 
-
-productRouter.get('/searchMoreProduct', productController.searchMoreProduct)
-
-
 export default productRouter;
