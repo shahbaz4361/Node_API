@@ -19,5 +19,9 @@
     "mongodb": "4.1",
     "mongoose": "^8.0.1",
     "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3"
   }
 }
