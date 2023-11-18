@@ -5,7 +5,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "babel-node app.js",
     "dev": "nodemon app.js"
   },
   "author": "Shahbaz",
@@ -17,5 +17,9 @@
     "mongodb": "4.1",
     "mongoose": "^8.0.1",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3"
   }
 }
