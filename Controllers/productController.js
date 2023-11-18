@@ -2,8 +2,7 @@ import Product from '../model/product.js'; // import model file
 
 // Create a new product
 async function createProduct(req, res) {
-    try {
-       
+    try {       
         // for name required
         if (!req.body.name) {
             return res.status(400).json({
@@ -130,6 +129,8 @@ async function fetchProductById(req, res) {
         });
     }
 };
+
+// Search Product with multiple fields
 
 async function searchProduct(req, res) {      
       const product = await Product.find(req.query);
